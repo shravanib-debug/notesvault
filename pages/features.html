@@ -84,13 +84,6 @@
       line-height: 1.6;
     }
 
-    footer {
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-      color: #777;
-    }
-
     html {
       scroll-behavior: smooth;
     }
@@ -120,7 +113,7 @@
   <header>
     <div class="logo-title">
       <img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png" alt="Logo" />
-      <h1>NotesVault Features ✨ </h1>
+      <h1>NotesVault Features ✨</h1>
     </div>
     <div class="nav-links">
       <a href="../index.html">🏠 Home</a>
@@ -152,17 +145,23 @@
       <h2>🌗 Dark Mode</h2>
       <p>Switch between light and dark themes with a single click for comfortable reading at night.</p>
     </div>
-  
-   
-    <div class="feature" id="PYQs">
-      <h2>💬 Upload PYQs or Past year question papers </h2>
-      <p>Add past year questions and papers so that preparation can be easier for other students. </p>
-    </div>
-    </div>
 
-  <footer>
-    &copy; 2025 NotesVault | Made with ❤️ for Students
-  </footer>
+    <div class="feature" id="PYQs">
+      <h2>💬 Upload PYQs or Past Year Question Papers</h2>
+      <p>Add past year questions and papers so that preparation can be easier for other students.</p>
+    </div>
+  </div>
+
+  <!-- Reusable Footer Loader -->
+  <div id="footer-container"></div>
+  <script>
+    fetch('../pages/footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading footer:', error));
+  </script>
 
   <script>
     // Highlight feature cards on scroll

@@ -240,9 +240,17 @@
   </main>
 
   <!-- Footer -->
-  <footer>
-    <p>© 2025 NotesVault - GSSoC Contribution</p>
-  </footer>
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch('../pages/Footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      })
+      .catch(error => {
+        console.error('Error loading footer:', error);
+      });
+  </script>
 
 </body>
 </html>
